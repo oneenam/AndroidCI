@@ -12,10 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: set up JDK 1.8
-        uses: actions/setup-java@v1
+      - name: set up JDK 11
+        uses: actions/setup-java@v2
         with:
-          java-version: 1.8
+          java-version: '11'
+          distribution: 'temurin'
+          cache: gradl
       - name: add execute permission to gradlew
         run: chmod u+x ./gradlew
       - name: Assemble debug apk
